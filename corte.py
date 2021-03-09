@@ -31,10 +31,12 @@ def load_image_dataset(path_dir):
         return (np.asarray(images))
         
         
-        
-train_images1 = load_image_dataset('C:\\Users\\Benjamin  Tabak\\Desktop\\usp\\IC 2\\restoSelect')
-train_images2 = load_image_dataset('C:\\Users\\Benjamin  Tabak\\Desktop\\usp\\IC 2\\mta')
-train_images3 = load_image_dataset('C:\\Users\\Benjamin  Tabak\\Desktop\\usp\\IC 2\\erica')
+dir1 = 
+dir2 = 
+dir3 = 
+train_images1 = load_image_dataset(dir1)
+train_images2 = load_image_dataset(dir2)
+train_images3 = load_image_dataset(dir3)
 
 
 
@@ -102,8 +104,10 @@ model1.fit(treinoErica, labelErica, epochs=20)
 probs  = []
 probs1 = []
 
+#Parte dos testes em novas imagens
+dir4 = 
 for i in range(12):
-    pasta = 'C:\\Users\\Benjamin  Tabak\\Desktop\\usp\\IC 2\\Exames_novos\\' + str(i+1)
+    pasta = dir4 + str(i+1)
     Teste2 = load_image_dataset(pasta)
     Teste2 = Teste2/255.0
     Teste2 = tf.convert_to_tensor(Teste2)
@@ -127,13 +131,15 @@ for i in range(12):
     
     Teste2 = tf.reshape(Teste2, [Teste2.shape[0],240,240])
     Teste2.numpy()
-    
-    os.chdir('C:\\Users\\Benjamin  Tabak\\Desktop\\usp\\IC 2\\ResultadoMTA')
+
+    #dir5 = 
+    #os.chdir(dir5)
     plt.imshow(Teste2[index], cmap = 'gray')
     #plt.savefig(str(i+1) + '.png', format='png')
     plt.show()
     
-    os.chdir('C:\\Users\\Benjamin  Tabak\\Desktop\\usp\\IC 2\\ResultadoErica')
+    #dir6 = 
+    #os.chdir(dir6)
     plt.imshow(Teste2[index1], cmap = 'gray')
     #plt.savefig(str(i+1) + '.png', format='png')
     plt.show()
